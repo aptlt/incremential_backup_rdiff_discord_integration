@@ -12,6 +12,6 @@ Répertoires sauvegardés par ce script (facilement adaptable - WIP) :
 - /etc/nginx
 - /tmp/backup/mysql
 
-*Pré-requis :
-- *déposer les scripts backup.sh et discord.sh dans le même répertoire
-- *avoir les droits d'écriture dans le répertoire de dépose des scripts (création d'un répertoire de log durant l'exécution du script)
+*Pré-requis :*
+- *déposer les scripts backup.sh et discord.sh dans le même répertoire*
+- *avoir les droits d'écriture dans le répertoire de dépose des scripts (création d'un répertoire de log durant l'exécution du script)*
