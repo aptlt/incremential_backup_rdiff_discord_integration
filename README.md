@@ -12,7 +12,7 @@ Répertoires sauvegardés par ce script (facilement adaptable - WIP) :
 - /etc/nginx
 - /tmp/backup/mysql
 
-
+<br /><br />
 
 *Pré-requis :*
 - *déposer les scripts backup.sh et discord.sh dans le même répertoire*
