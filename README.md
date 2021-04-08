@@ -4,3 +4,10 @@ Backup de répertoires Linux avec envoi d'une notification à Discord.
 
 Pour l'envoi à Discord, le script s'appuie sur le super travail réalisé par l'équipe ChaoticWeg :
   https://github.com/ChaoticWeg/discord.sh
+Merci à eux pour le partage de leur solution
+
+Répertoires sauvegardés par ce script (facilement adaptable - WIP) :
+- /var/lib/pterodactyl/volumes
+- /var/www
+- /etc/nginx
+- /tmp/backup/mysql
