@@ -32,9 +32,16 @@ BACKUP_DIR="/var/lib/pterodactyl/backups"
 mkdir -p /tmp/backup/mysql
 
 ## Export des bases
+export_db=${LOG_DIR}/export_db_${DATE}.log
+export_db_tmp=${LOG_DIR}/export_db_tmp.log
+
 for DB in $(mysql -e 'show databases' -s --skip-column-names); do
-    mysqldump $DB > "/tmp/backup/mysql/$DB.sql";
+    mysqldump -v $DB > "/tmp/backup/mysql/$DB.sql" 2>> ${export_db_tmp}
 done
+
+grep --ignore-case "error" ${export_db_tmp} >> ${export_db}
+
+rm -f ${export_db_tmp}
 
 ## Creation du fichier de log envoye à Discord
 log_send=${LOG_DIR}/backup_${DATE}.log
@@ -79,6 +86,7 @@ do
         cat ${log_temp} >> ${log_send}
         echo -n "\n" >> ${log_send}
         couleur=0xD21D38
+        notify_owner="<@code_discord_user_to_notify>"
     fi
 
     rm -f ${log_temp}
@@ -102,4 +110,9 @@ text_discord=`cat ${log_send}`
     --username "RoboBackup" \
     --title "RECAPITULATIF BACKUP ${DATE}" \
     --description "${text_discord}" \
+    --text "${notify_owner}" \
     --color ${couleur}
+    
+${WORK_DIR}/discord.sh \
+    --username "RoboBackup" \
+    --file ${export_db} 
