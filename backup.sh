@@ -89,7 +89,7 @@ done
 rm -rf /tmp/backup/mysql
 
 ## Declaration de la variable DISCORD_WEBHOOK
-DISCORD_WEBHOOK=https://discordapp.com/api/webhooks/829766693869453315/qIFMK7oMP7Am5tmNeMQysqNlW2Ywir0yox_BHhCj1QS9EIQ_s9gr0WLg6Cc9-8iIphPh
+DISCORD_WEBHOOK=https://URL_WEBHOOK_DISCORD
 export DISCORD_WEBHOOK
 
 ## Supprimer les retour à la ligne et les remplacer par le string "\n"
@@ -103,8 +103,3 @@ text_discord=`cat ${log_send}`
     --title "RECAPITULATIF BACKUP ${DATE}" \
     --description "${text_discord}" \
     --color ${couleur}
-
-#rdiff-backup --remove-older-than 30D --force /var/lib/pterodactyl/backups/volumes
-#rdiff-backup --remove-older-than 30D --force /var/lib/pterodactyl/backups/www
-#rdiff-backup --remove-older-than 30D --force /var/lib/pterodactyl/backups/nginx
-#rdiff-backup --remove-older-than 30D --force /var/lib/pterodactyl/backups/mysql
