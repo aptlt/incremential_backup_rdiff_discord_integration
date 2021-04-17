@@ -1,4 +1,4 @@
-# incremential_backup_rdiff_discord_integration
+# Backup incrementiel avec envoi d'infos à Discord
 
 Backup de répertoires Linux avec envoi d'une notification à Discord. 
 
